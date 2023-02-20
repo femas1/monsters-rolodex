@@ -9,7 +9,8 @@ class App extends Component {
   super();
 
   this.state = {
-    name: 'Andrei'
+    name: {firstName: 'Yihua', lastName: 'Zhang'},
+    company: 'ZTM'
   }
  }
 
@@ -19,11 +20,22 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Hello {this.state.name}.
+            Hello {this.state.name.firstName} {this.state.name.lastName}, I work at {this.state.company}.
           </p>
          <button onClick={() => {
-            this.setState({name: 'Lumi'})
-         }}>Change name</button>
+            this.setState(() => {
+                return {
+                  name: {firstName: 'Andrei', lastName: 'Neagoie'}, company: 'CVS'
+                }
+            }, 
+            // ONCE THE STATE IS UPDATED (FIRST FUNCTION), THE SECOND FUNCTION (optional)IS RUN
+            () => {
+              console.log(this.state);
+            }
+            )
+            
+         }}>
+            Change name</button>
         </header>
       </div>
     );

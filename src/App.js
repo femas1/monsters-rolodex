@@ -27,6 +27,14 @@ componentDidMount() {
       }))
 }
 
+  onSearchChange = (e) => {
+               
+    const searchField = e.target.value.toLocaleLowerCase();
+    this.setState(() => {
+      return { searchField };
+    })
+  }
+
   render() {
     console.log('render')
 
@@ -40,15 +48,7 @@ componentDidMount() {
             className='search-box' 
             type='search' 
             placeholder='Search monsters' 
-            onChange={
-              (e) => {
-               
-                const searchField = e.target.value.toLocaleLowerCase();
-                this.setState(() => {
-                  return { searchField };
-                })
-              }
-        }/>
+            onChange={this.onSearchChange}/>
         {filteredMonsters.map((monster) => {
           return (
               <div key={monster.id}>

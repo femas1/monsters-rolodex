@@ -38,11 +38,6 @@ componentDidMount() {
 
     return (
       <div className="App">
-        <input 
-            className='search-box' 
-            type='search' 
-            placeholder='Search monsters' 
-            onChange={onSearchChange}/>
         <CardList monsters={filteredMonsters}/>
       </div>
     );

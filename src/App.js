@@ -39,7 +39,7 @@ componentDidMount() {
 
     return (
       <div className="App">
-        <SearchBox onChangeHandler={onSearchChange} placeholder='Search monsters...'/>
+        <SearchBox onChangeHandler={onSearchChange} placeholder='Search monsters...' className='search-box'/>
         <CardList monsters={filteredMonsters}/>
       </div>
     );
